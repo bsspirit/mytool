@@ -2,9 +2,12 @@
 
 import hashlib
 
-def main(arg):
-	m = hashlib.md5(arg)
-	print m.hexdigest()
-       
+def num6():
+	for i in range(100000,999999):
+		print str(i) + ',' + md5(i)
+
+def md5(arg):
+	return str(hashlib.md5(str(arg)).hexdigest())
+
 if __name__=="__main__":
-    main('1987654')
+	num6()

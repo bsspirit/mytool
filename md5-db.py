@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*- 
 
-"""import hashlib
-
-m = hashlib.md5('12345')
-print m.digest()
-print m.hexdigest()
-"""
-
 
 # Author: x140m1ng <lininruc[at]gmail[dot]com>
 # Version: 0.1
@@ -47,12 +40,17 @@ def main():
         response=urllib2.urlopen(request)
         print "[+] md5.hashcracking.com:"+response.read()[49:]
        
+	    """
         #site6:http://md5.drasen.net/search.php?query=
-        request=urllib2.Request("http://md5.drasen.net/search.php?query="+hash)
-        response=urllib2.urlopen(request)
-        link = re.findall(r'Plain:[^<>]*', response.read())
-        print "[+] md5.drasen.net/search.php:"+link[0][7:]
-       
+		try:
+			request=urllib2.Request("http://md5.drasen.net/search.php?query="+hash)
+			response=urllib2.urlopen(request)
+			link = re.findall(r'Plain:[^<>]*', response.read())
+			print "[+] md5.drasen.net/search.php:"+link[0][7:]
+		except:
+			print 'error'
+		"""	
+       """
         #site8:http://md5-db.de/${HASH}.html
         request=urllib2.Request("http://md5-db.de/"+hash+".html")
         response=urllib2.urlopen(request)
@@ -65,7 +63,7 @@ def main():
         link = re.findall(r'<b>[^<>]*', response.read())
         print "[+] victorov.su/md5/:"+link[0][3:]
        
-       
+       """
        
 if __name__=="__main__":
     main()
