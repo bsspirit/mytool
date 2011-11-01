@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*- 
-# MD5ÆÆ½â¹¤¾ß
-# ×÷Õß: x140m1ng
-# ÓÊÏä: <lininruc[at]gmail[dot]com>
-# ²©¿Í: http://hi.baidu.com/ruclin
-# ½« md5ÄÃµ½ÍøÉÏÈ¥ËÑ£¬È»ºó·µ»ØÕıÈ·µÄÖµ¡£
+# MD5ç ´è§£å·¥å…·
+# ä½œè€…: x140m1ng
+# é‚®ç®±: <lininruc[at]gmail[dot]com>
+# åšå®¢: http://hi.baidu.com/ruclin
+# å°† md5æ‹¿åˆ°ç½‘ä¸Šå»æœï¼Œç„¶åè¿”å›æ­£ç¡®çš„å€¼ã€‚
 
 import sys , re , urllib, urllib2,string
 from urllib2 import Request , urlopen , URLError , HTTPError
@@ -32,17 +32,12 @@ def main():
         response=urllib2.urlopen(request)
         print "[+] md5.hashcracking.com:"+response.read()[49:]
        
-	    """
         #site6:http://md5.drasen.net/search.php?query=
-		try:
-			request=urllib2.Request("http://md5.drasen.net/search.php?query="+hash)
-			response=urllib2.urlopen(request)
-			link = re.findall(r'Plain:[^<>]*', response.read())
-			print "[+] md5.drasen.net/search.php:"+link[0][7:]
-		except:
-			print 'error'
-		"""	
-       """
+        request=urllib2.Request("http://md5.drasen.net/search.php?query="+hash)
+        response=urllib2.urlopen(request)
+        link = re.findall(r'Plain:[^<>]*', response.read())
+        print "[+] md5.drasen.net/search.php:"+link[0][7:]
+        
         #site8:http://md5-db.de/${HASH}.html
         request=urllib2.Request("http://md5-db.de/"+hash+".html")
         response=urllib2.urlopen(request)
@@ -55,7 +50,6 @@ def main():
         link = re.findall(r'<b>[^<>]*', response.read())
         print "[+] victorov.su/md5/:"+link[0][3:]
        
-       """
        
 if __name__=="__main__":
     main()
